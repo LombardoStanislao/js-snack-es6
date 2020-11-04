@@ -3,6 +3,7 @@
 
 $(document).ready(function() {
 
+
   const firstArray = [
 
     {
@@ -36,10 +37,24 @@ $(document).ready(function() {
     },
   ]
 
+  const getRndInteger =  (min, max) =>  {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  };
 
-  const secondArray  = firstArray.map((element, index)) => {
+  let alfabeto = 'abcdefghijklmnopqrtuvwxyz';
+  let posizione = getRndInteger(0, 25);
+  let letteraCasuale = alfabeto.charAt(posizione);
 
-    element.position = 
-  }
+  console.log(letteraCasuale);
+
+  const secondArray  = firstArray.map((element,index)) => {
+
+    element.position = letteraCasuale;
+
+  };
+
+  console.log(secondArray);
+
+
 
 });
