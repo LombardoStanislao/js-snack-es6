@@ -37,24 +37,30 @@ $(document).ready(function() {
     },
   ]
 
+
+
   const getRndInteger =  (min, max) =>  {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   };
 
-  let alfabeto = 'abcdefghijklmnopqrtuvwxyz';
-  let posizione = getRndInteger(0, 25);
-  let letteraCasuale = alfabeto.charAt(posizione);
 
-  console.log(letteraCasuale);
-
-  const secondArray  = firstArray.map((element,index)) => {
-
-    element.position = letteraCasuale;
-
+  const randomLetter = () => {
+    let alfabeto = 'abcdefghijklmnopqrtuvwxyz';
+    let posizione = getRndInteger(0, 25);
+    let letteraCasuale = alfabeto.charAt(posizione);
+    return letteraCasuale
   };
 
+
+
+  const secondArray  = firstArray.map((element) => {
+
+    element.position = randomLetter();
+
+    return element;
+
+  });
+
   console.log(secondArray);
-
-
 
 });
