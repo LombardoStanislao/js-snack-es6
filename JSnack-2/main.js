@@ -9,9 +9,10 @@ $(document).ready(function() {
   let firstNumber = parseInt(prompt('Inserisci un numero da 1 a 14'));
   let secondNumber = parseInt(prompt('Inserisci un numero da 1 a 14'));
 
-  const secondArray = firstArray.filter((element) => {
+  const secondArray = firstArray.filter((element, index) => {
 
-    if (element <= firstNumber && element >= secondNumber) {
+    if ((index + 1)  >= firstNumber && index <= secondNumber) {
+
       return element
     }
 
