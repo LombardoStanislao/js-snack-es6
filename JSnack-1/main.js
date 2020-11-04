@@ -43,13 +43,9 @@ $(document).ready(function() {
 
   let lightBike;
 
-  console.log(lightWeight);
-
   bikesArray.forEach((element) => {
 
     let {weight} = element;
-
-    console.log(weight);
 
     if (weight < lightWeight) {
 
@@ -61,9 +57,14 @@ $(document).ready(function() {
 
   });
 
-  $('#light-bike').append(lightBike.name + ' e pesa: ' + lightWeight + 'Kg');
+  const {name, weight} = lightBike;
 
-  console.log('La bici più leggera è: ' + lightBike.name + ' e pesa: ' + lightWeight + 'Kg');
+  $('.container').append(
+    `
+      <h1> La bici più leggera è: </h1>
+      <p> ${name} e pesa ${weight} Kg
 
+    `
+  );
 
 });
