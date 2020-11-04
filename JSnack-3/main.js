@@ -55,11 +55,16 @@ $(document).ready(function() {
 
   const secondArray  = firstArray.map((element) => {
 
-    element.position = randomLetter();
+    const copyElement = {
+      ...element,
+      position: randomLetter()
+    };
 
-    return element;
+    return copyElement;
 
   });
+
+  console.log(firstArray);
 
   console.log(secondArray);
 
